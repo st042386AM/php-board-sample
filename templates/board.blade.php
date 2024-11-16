@@ -32,6 +32,11 @@
         <h3>{{ $post['title'] }}</h3>
         <p><strong>{{ $post['name'] }}</strong> - {{ $post['created_at'] }}</p>
         <p>{{ $post['content'] }}</p>
+        <form class="deleteform" method="post" action="">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="id" value="{{ $post['id'] }}">
+            <button type="submit" onclick="return confirm('この投稿を削除してもよろしいですか？')">削除</button>
+        </form>
     </div>
     @endforeach
 </body>

@@ -68,6 +68,32 @@ form button:hover {
     background-color: #45a049;
 }
 
+/* 削除ボタンのスタイル */
+.deleteform {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-shadow: none;
+    text-align: right;
+}
+
+.deleteform button[type="submit"] {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.deleteform button[type="submit"]:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+
 /* 投稿一覧のスタイル */
 h2 {
     text-align: center;
