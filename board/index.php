@@ -11,7 +11,7 @@ $blade = new BladeOne(__DIR__ . '/../templates', __DIR__ . '/../cache');
 try {
     // データベース接続を確立    
     $pdo = new PDO(
-        "pgsql:host={$config['DB_HOST']};port={$config['DB_PORT']};dbname={$config['DB_NAME']}",
+        "mysql:host={$config['DB_HOST']};port={$config['DB_PORT']};dbname={$config['DB_NAME']};charset=utf8mb4",
         $config['DB_USER'],
         $config['DB_PASS'],
         [
@@ -30,16 +30,8 @@ try {
             ':content' => $_POST['content'] ?? ''
         ]);
 
-        // リダイレクト用のURLを生成
-        // KCGの共用サーバにも対応できるようにする。
-        $redirectUrl = dirname($_SERVER['REQUEST_URI']);
-        if ($redirectUrl === '/' || $redirectUrl === '\\') {
-            $redirectUrl = '/';
-        } else {
-            $redirectUrl .= '/';
-        }
         // フォーム再送信を防ぐためにリダイレクト
-        header('Location: ' . $redirectUrl);
+        header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
 
