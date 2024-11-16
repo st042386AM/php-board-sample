@@ -12,15 +12,15 @@
     <h1>掲示板</h1>
     <form method="post" action="">
         <p>
-            <label for="name">名前:</label><br>
+            <label for="name">名前:</label>
             <input type="text" id="name" name="name" required>
         </p>
         <p>
-            <label for="title">タイトル:</label><br>
+            <label for="title">タイトル:</label>
             <input type="text" id="title" name="title" required>
         </p>
         <p>
-            <label for="content">本文:</label><br>
+            <label for="content">本文:</label>
             <textarea id="content" name="content" rows="5" required></textarea>
         </p>
         <button type="submit">投稿する</button>
