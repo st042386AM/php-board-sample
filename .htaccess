@@ -1,5 +1,5 @@
 RewriteEngine On
 
 # cache, config, vendor へのアクセスを禁止
-RewriteRule ^(cache|config|vendor)(/|$) - [F]
+RewriteRule ^(cache|config|vendor|dao)(/|$) - [F]
 
