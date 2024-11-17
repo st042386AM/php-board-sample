@@ -27,7 +27,7 @@ CREATE TABLE posts (
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-# 実行までの想定される手順
+# 実行までの想定手順
 
 ## 開発用サーバで掲示板を開くまでの10ステップ
 
