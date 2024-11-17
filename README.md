@@ -37,12 +37,12 @@ CREATE TABLE posts (
 Windows 11を使用。
 
 1. XAMPPをインストール
-2. 環境変数PATHに `C:\xampp\php`追加。
-3. Composerをインストール
+  - Windowsの環境変数PATHに `C:\xampp\php`追加。
+2. Composerをインストール
   - https://getcomposer.org/download/
   - Composer-Setup.exe をダウンロード、インストール
-4. XAMPPでMySQLとApacheをStart
-5. phpMyAdminを開く 
+3. XAMPPでMySQLとApacheをStart
+4. phpMyAdminを開く 
   - http://localhost/phpmyadmin/
   - board という名前のデータベースを作成
   - 上のMySQLのテーブル定義どおりのテーブルを作成
