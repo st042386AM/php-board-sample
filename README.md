@@ -1,5 +1,30 @@
-PHP掲示板のサンプルです。
-改変、配布などはご自由に。
+# 概要
+
+PHP掲示板のサンプルです。改変、配布などはご自由に。
+
+# 機能
+
+投稿と削除ができます。
+
+# 技術
+
+PHP入門でよく見かけるHTMLとコードの混じった記法が、かえって判りにくく感じている人向け。
+
+- フレームワークなし
+- クラスを用いたMVC
+- テンプレートエンジンとしてBladeを用います
+
+# MySQLのテーブル定義
+
+```
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
 
 ## License
 These codes are licensed under CC0.
