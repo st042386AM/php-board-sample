@@ -19,7 +19,7 @@ try {
     );
     // Data Access Objectの生成
     $postDAO = new PostDAO($pdo);
-    // アプリケーションの実行
+    // アプリケーションクラスの生成
     $app = new App($postDAO);
     // リクエストの処理
     $app->handleRequest();
