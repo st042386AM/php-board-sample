@@ -111,13 +111,22 @@ if ($environment === 'local') {
   - .htaccess
   - board/
   - config/
-  - dao/
-  - templates/
+  - src/
   - vendor/
 - htdocs直下にcacheフォルダを作成
 - 割り当てられたホスト名に /board/ を加えたURLを開く
   - 例）http://xxx.lovestoblog.com/board/
 
+## 今後の発展
+
+アプリが大きくなった場合には、次のことを検討してください。
+
+- 名前空間の利用
+- Composerを用いた自動ローディング
+
+さらに次へステップアップする場合、Laravelフレームワークの利用を検討してください。
+
 ## License
+
 These codes are licensed under CC0.
 [![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/deed.ja)

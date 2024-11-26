@@ -11,7 +11,7 @@ class App
     public function __construct(PostDAO $postDAO)
     {
         $this->postDAO = $postDAO;
-        $this->blade = new BladeOne(__DIR__ . '/../templates', __DIR__ . '/../cache');
+        $this->blade = new BladeOne(__DIR__ . '/templates', __DIR__ . '/../cache');
     }
 
     public function handleRequest(): void
