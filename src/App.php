@@ -18,30 +18,30 @@ class App
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['_method']) && $_POST['_method'] === 'DELETE') {
-                $this->handleDeleteRequest();
+                $this->handleDelete();
             } else {
-                $this->handlePostRequest();
+                $this->handlePost();
             }
         } else {
-            $this->handleGetRequest();
+            $this->handleGet();
         }
     }
 
-    private function handlePostRequest(): void
+    private function handlePost(): void
     {
         $this->postDAO->create($_POST['name'], $_POST['title'], $_POST['content']);
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
 
-    private function handleDeleteRequest(): void
+    private function handleDelete(): void
     {
         $this->postDAO->delete($_POST['id']);
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
 
-    private function handleGetRequest(): void
+    private function handleGet(): void
     {
         $posts = $this->postDAO->getAll();
         echo $this->blade->run('board', ['posts' => $posts]);
