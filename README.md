@@ -20,18 +20,6 @@ PHP入門でよく見かけるHTMLとコードの混じった記法が、
 Laravelへステップアップする準備になるよう、
 テンプレートエンジンはBladeを用いています。
 
-# MySQLのテーブル定義
-
-```
-CREATE TABLE posts (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    content TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
-
 # 実行までの想定手順
 
 ## 開発用サーバで掲示板を開くまでの10ステップ
@@ -47,7 +35,18 @@ Windows 11を使用。
 4. phpMyAdminを開く 
   - http://localhost/phpmyadmin/
   - board という名前のデータベースを作成
-  - 上のMySQLのテーブル定義どおりのテーブルを作成
+  - 下のMySQLのテーブル定義どおりのテーブルを作成
+
+```
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
 5. このプロジェクトのリポジトリをクローン
   - php-board-sampleフォルダが作成されます。
 6. VSCodeをインストール
