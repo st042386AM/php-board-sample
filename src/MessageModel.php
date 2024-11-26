@@ -1,6 +1,6 @@
 <?php
 
-class PostDAO
+class MessageModel
 {
     private PDO $pdo;
 
@@ -11,7 +11,7 @@ class PostDAO
 
     public function create(string $name, string $title, string $content): void
     {
-        $stmt = $this->pdo->prepare('INSERT INTO posts (name, title, content) VALUES (:name, :title, :content)');
+        $stmt = $this->pdo->prepare('INSERT INTO messages (name, title, content) VALUES (:name, :title, :content)');
         $stmt->execute([
             ':name' => $name,
             ':title' => $title,
@@ -21,13 +21,13 @@ class PostDAO
 
     public function delete(int $id): void
     {
-        $stmt = $this->pdo->prepare('DELETE FROM posts WHERE id = :id');
+        $stmt = $this->pdo->prepare('DELETE FROM messages WHERE id = :id');
         $stmt->execute([':id' => $id]);
     }
 
     public function getAll(): array
     {
-        $stmt = $this->pdo->query('SELECT * FROM posts ORDER BY created_at DESC');
+        $stmt = $this->pdo->query('SELECT * FROM messages ORDER BY created_at DESC');
         return $stmt->fetchAll();
     }
 }

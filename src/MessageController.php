@@ -2,16 +2,15 @@
 
 use eftec\bladeone\BladeOne;
 
-// アプリケーションクラス
-class App
+class MessageController
 {
-    private PostDAO $postDAO;
+    private MessageModel $messageModel;
     private BladeOne $blade;
 
-    public function __construct(PostDAO $postDAO)
+    public function __construct(MessageModel $messageDAO)
     {
-        $this->postDAO = $postDAO;
-        $this->blade = new BladeOne(__DIR__ . '/templates', __DIR__ . '/../cache');
+        $this->messageModel = $messageDAO;
+        $this->blade = new BladeOne(__DIR__ . '/views', __DIR__ . '/../cache');
     }
 
     public function handleRequest(): void
@@ -29,22 +28,22 @@ class App
 
     private function handlePost(): void
     {
-        $this->postDAO->create($_POST['name'], $_POST['title'], $_POST['content']);
+        $this->messageModel->create($_POST['name'], $_POST['title'], $_POST['content']);
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
 
     private function handleDelete(): void
     {
-        $this->postDAO->delete($_POST['id']);
+        $this->messageModel->delete($_POST['id']);
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
 
     private function handleGet(): void
     {
-        $posts = $this->postDAO->getAll();
-        echo $this->blade->run('board', ['posts' => $posts]);
+        $posts = $this->messageModel->getAll();
+        echo $this->blade->run('index', ['posts' => $posts]);
         exit;
     }
 }

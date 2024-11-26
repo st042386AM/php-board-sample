@@ -38,7 +38,7 @@ Windows 11を使用。
   - 下のMySQLのテーブル定義どおりのテーブルを作成
 
 ```
-CREATE TABLE posts (
+CREATE TABLE messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     title VARCHAR(255) NOT NULL,

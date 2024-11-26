@@ -2,8 +2,8 @@
 set_include_path(__DIR__ . '/../');
 require 'vendor/autoload.php';
 require 'src/database.php'; // データベース接続関数の読み込み
-require 'src/App.php'; // アプリケーションクラスの読み込み
-require 'src/PostDAO.php'; // DAO(Data Access Object)クラスの読み込み
+require 'src/MessageController.php';
+require 'src/MessageModel.php';
 
 // アプリはここから開始
 try {
@@ -11,10 +11,12 @@ try {
     $config = include __DIR__ . '/../config/config.php';
     $pdo = createPDO($config);
 
-    // Data Access Objectの生成
-    $postDAO = new PostDAO($pdo);
-    // アプリケーションクラスの生成
-    $app = new App($postDAO);
+    // Modelの生成
+    $messageModel = new MessageModel($pdo);
+
+    // Controllerの生成
+    $app = new MessageController($messageModel);
+
     // リクエストの処理
     $app->handleRequest();
 } catch (Exception $e) {
