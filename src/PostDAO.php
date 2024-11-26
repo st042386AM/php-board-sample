@@ -9,7 +9,7 @@ class PostDAO
         $this->pdo = $pdo;
     }
 
-    public function createPost(string $name, string $title, string $content): void
+    public function create(string $name, string $title, string $content): void
     {
         $stmt = $this->pdo->prepare('INSERT INTO posts (name, title, content) VALUES (:name, :title, :content)');
         $stmt->execute([
@@ -19,13 +19,13 @@ class PostDAO
         ]);
     }
 
-    public function deletePost(int $id): void
+    public function delete(int $id): void
     {
         $stmt = $this->pdo->prepare('DELETE FROM posts WHERE id = :id');
         $stmt->execute([':id' => $id]);
     }
 
-    public function getPosts(): array
+    public function getAll(): array
     {
         $stmt = $this->pdo->query('SELECT * FROM posts ORDER BY created_at DESC');
         return $stmt->fetchAll();

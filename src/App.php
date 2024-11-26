@@ -29,21 +29,21 @@ class App
 
     private function handlePostRequest(): void
     {
-        $this->postDAO->createPost($_POST['name'], $_POST['title'], $_POST['content']);
+        $this->postDAO->create($_POST['name'], $_POST['title'], $_POST['content']);
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
 
     private function handleDeleteRequest(): void
     {
-        $this->postDAO->deletePost($_POST['id']);
+        $this->postDAO->delete($_POST['id']);
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
 
     private function handleGetRequest(): void
     {
-        $posts = $this->postDAO->getPosts();
+        $posts = $this->postDAO->getAll();
         echo $this->blade->run('board', ['posts' => $posts]);
         exit;
     }
