@@ -27,12 +27,12 @@ Laravelへステップアップする準備になるよう、
 Windows 11を使用。
 
 1. XAMPPをインストール
-  - Windowsの環境変数PATHに `C:\xampp\php`追加。
-2. Composerをインストール
+2. Windowsの環境変数PATHに `C:\xampp\php`追加。
+3. Composerをインストール
   - https://getcomposer.org/download/
   - Composer-Setup.exe をダウンロード、インストール
-3. XAMPPでMySQLとApacheをStart
 4. phpMyAdminを開く 
+  - XAMPPでMySQLとApacheをStart
   - http://localhost/phpmyadmin/
   - board という名前のデータベースを作成
   - 下のMySQLのテーブル定義どおりのテーブルを作成
