@@ -7,9 +7,9 @@ class MessageController
     private MessageModel $messageModel;
     private BladeOne $blade;
 
-    public function __construct(MessageModel $messageDAO)
+    public function __construct(MessageModel $messageModel)
     {
-        $this->messageModel = $messageDAO;
+        $this->messageModel = $messageModel;
         $this->blade = new BladeOne(__DIR__ . '/views', __DIR__ . '/../cache');
     }
 
