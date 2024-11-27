@@ -47,10 +47,10 @@ CREATE TABLE messages (
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-5. このプロジェクトのリポジトリをクローン
+5. このリポジトリをFork
   - php-board-sampleフォルダが作成されます。
-6. VSCodeをインストール
-  -  VSCodeでphp-board-sampleフォルダを開く
+6. このリポジトリをclone
+  - VSCodeをインストールして、クローンしたphp-board-sampleフォルダを開く
 7. config.php.templateを修正
   - ローカル環境向けのデータベース接続設定に、上記XAMPPで設定したMySQLのデータベース名などを記入。
 
