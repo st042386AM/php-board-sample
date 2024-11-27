@@ -15,10 +15,10 @@ try {
     $messageModel = new MessageModel($pdo);
 
     // Controllerの生成
-    $app = new MessageController($messageModel);
+    $controller = new MessageController($messageModel);
 
     // リクエストの処理
-    $app->handleRequest();
+    $controller->handleRequest();
 } catch (Exception $e) {
     error_log("Exception caught: " . $e->getMessage());
     error_log("Stack trace: " . $e->getTraceAsString());
