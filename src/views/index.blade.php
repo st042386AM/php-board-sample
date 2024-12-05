@@ -29,7 +29,7 @@
     <h2>投稿一覧</h2>
     @foreach ($posts as $post)
     <div class="post">
-        <h3>{{ $post['title'] }}</h3>
+        <h3>[{{$post['id']}}] {{ $post['title'] }}</h3>
         <p><strong>{{ $post['name'] }}</strong> - {{ $post['created_at'] }}</p>
         <p>{{ $post['content'] }}</p>
         <form class="deleteform" method="post" action="">
